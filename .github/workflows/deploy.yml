@@ -161,7 +161,7 @@ jobs:
         working-directory: Helm
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | helm registry login ghcr.io --username ${{ github.actor }} --password-stdin
-          helm push projectplanner-${{vars.CHART_VERSION}}.tgz oci://ghcr.io/${{ github.repository }}/projectplanner
+          helm push projectplanner-${{vars.CHART_VERSION}}.tgz oci://ghcr.io/${{ github.repository }}
 
       - name: share chart info
         id: chart_url
